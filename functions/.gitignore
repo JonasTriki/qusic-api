@@ -5,4 +5,8 @@
 # Typescript v1 declaration files
 typings/
 
+# Generated files
 node_modules/
+
+# Firebase service accounts
+**/*serviceAccount.json

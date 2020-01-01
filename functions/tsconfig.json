@@ -15,7 +15,8 @@
     "typeRoots": ["node_modules/@types"],
     "baseUrl": ".",
     "paths": {
-      "_responses": ["./src/responses"]
+      "_responses": ["./src/responses"],
+      "_logger": ["./src/logger"]
     }
   },
   "exclude": ["node_modules"],
