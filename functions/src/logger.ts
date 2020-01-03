@@ -1,18 +1,23 @@
-import winston from 'winston';
+import winston, { format, transports } from 'winston';
 
 const logger = winston.createLogger({
   level: 'info',
-  format: winston.format.json(),
+  format: format.combine(
+    format.json(),
+    format.splat(),
+    format.colorize(),
+    format.prettyPrint(),
+  ),
   defaultMeta: { service: 'user-service' },
   transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
+    new transports.File({ filename: 'error.log', level: 'error' }),
+    new transports.File({ filename: 'combined.log' }),
   ],
 });
 
 if (process.env.NODE_ENV !== 'prod') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple(),
+  logger.add(new transports.Console({
+    format: format.simple(),
   }));
 }
 

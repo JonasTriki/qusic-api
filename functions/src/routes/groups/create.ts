@@ -9,6 +9,8 @@ const router = Router();
 const inputValidator = [
   body('name').isString().isLength({ min: 1 }),
   body('pin').isNumeric().optional(),
+  body('latitude').isNumeric(),
+  body('longitude').isNumeric(),
 ];
 
 router.post('/', inputValidator, (req: Request, res: Response, next: NextFunction): void => {
@@ -21,10 +23,14 @@ router.post('/', inputValidator, (req: Request, res: Response, next: NextFunctio
 
 router.post('/', (req, res) => {
   try {
-    const { name, pin } = req.body;
+    const {
+      name, pin, latitude, longitude,
+    } = req.body;
 
     // TODO: Implement
-    responses.ok({ groupName: name, groupPIN: pin }, res);
+    responses.ok({
+      name, pin, latitude, longitude,
+    }, res);
   } catch (err) {
     responses.unexpectedError(err, res);
   }

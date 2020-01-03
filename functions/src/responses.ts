@@ -22,7 +22,8 @@ const unauthorized = (res: Response): void => {
 };
 
 const badRequest = (req: Request, res: Response): void => {
-  logger.log({ level: 'error', message: `Bad request body?: ${req.body}` });
+  // TODO: Print to console if dev, else Firebase Event error if prod.
+  logger.log('error', 'Bad request body: %j', req.body);
   res.status(400).send('Bad request');
 };
 

@@ -7,6 +7,7 @@ typings/
 
 # Generated files
 node_modules/
+**/.DS_Store
 
 # Firebase service accounts
 **/*serviceAccount.json
