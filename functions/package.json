@@ -10,7 +10,7 @@
     "build": "tsc",
     "serve": "yarn build && firebase serve --only functions",
     "shell": "yarn build && firebase functions:shell",
-    "start": "nodemon --watch 'src/**/*.ts' --watch 'src/**/*.json' --watch '**/*.env' --exec 'ts-node' ./src/main.ts",
+    "start": "nodemon",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },

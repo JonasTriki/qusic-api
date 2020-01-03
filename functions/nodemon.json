@@ -1,5 +1,5 @@
 {
   "watch": ["src"],
-  "ext": "ts,json,env",
-  "exec": "ts-node ./src/main.ts"
+  "ext": "ts,json",
+  "exec": "yarn build && ts-node ./src/main.ts"
 }

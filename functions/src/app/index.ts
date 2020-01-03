@@ -1,24 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-// import admin from 'firebase-admin';
-
 import responses from '_responses';
-
-// import serviceAccount from './firebase/admin/serviceAccount.json';
 import routes from '../routes';
-
-// Initialize firebase admin
-/*
-admin.initializeApp({
-  credential: admin.credential.cert({
-    projectId: serviceAccount.project_id,
-    clientEmail: serviceAccount.client_email,
-    privateKey: serviceAccount.private_key,
-  }),
-  databaseURL: 'https://qusic-app.firebaseio.com',
-});
-*/
 
 const app = express();
 
