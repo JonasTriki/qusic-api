@@ -16,8 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "_responses": ["./src/responses"],
-      "_logger": ["./src/logger"]
-    }
+      "_logger": ["./src/logger"],
+      "_firebase": ["./src/firebase"],
+      "_models": ["./src/models"]
+    },
+    "skipLibCheck": true
   },
   "exclude": ["node_modules"],
   "compileOnSave": true,

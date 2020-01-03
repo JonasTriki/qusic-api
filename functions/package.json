@@ -5,7 +5,7 @@
   "author": "Jonas Triki <trikijonas@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --ext .js,.ts",
     "prebuild": "yarn lint",
     "build": "tsc",
     "serve": "yarn build && firebase serve --only functions",
@@ -43,7 +43,6 @@
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-json": "^2.0.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "firebase-functions-test": "^0.1.6",
     "husky": "^3.1.0",
@@ -55,7 +54,9 @@
   },
   "_moduleAliases": {
     "_responses": "lib/responses",
-    "_logger": "lib/logger"
+    "_logger": "lib/logger",
+    "_firebase": "lib/firebase",
+    "_models": "lib/models"
   },
   "husky": {
     "hooks": {

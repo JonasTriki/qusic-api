@@ -17,9 +17,11 @@
       "alias": {
         "map": [
           ["_responses", "./src/responses"],
-          ["_logger", "./src/logger"]
+          ["_logger", "./src/logger"],
+          ["_firebase", "./src/firebase"],
+          ["_models", "./src/models"]
         ],
-        "extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+        "extensions": [".ts", ".js", ".json"]
       }
     }
   },
@@ -31,17 +33,12 @@
       "ignorePackages",
       {
         "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
+        "ts": "never"
       }
     ]
   },
   "parserOptions": {
     "ecmaVersion": 2018,
-    "ecmaFeatures": {
-      "jsx": true
-    },
     "sourceType": "module"
   }
 }
