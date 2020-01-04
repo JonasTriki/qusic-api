@@ -12,6 +12,7 @@ interface Params {
   password?: string;
   latitude: number;
   longitude: number;
+  hostUserId: string;
 }
 
 const router = Router();
@@ -21,6 +22,7 @@ const inputValidator = [
   body('latitude').isNumeric(),
   body('longitude').isNumeric(),
   body('password').optional(),
+  body('hostUserId').isString().isLength({ min: 1 }),
 ];
 
 router.post('/', inputValidator, (req: TypedRequest<Params>, res: Response, next: NextFunction): void => {
@@ -34,11 +36,13 @@ router.post('/', inputValidator, (req: TypedRequest<Params>, res: Response, next
 router.post('/', async (req: TypedRequest<Params>, res) => {
   try {
     const {
-      name, password, latitude, longitude,
+      name, password, latitude, longitude, hostUserId,
     } = req.body;
 
     const group = await refs.groups.add({
       name,
+      hostUserId,
+      devices: [hostUserId],
       password: password || null,
       coordinates: new firestore.GeoPoint(latitude, longitude),
     });
