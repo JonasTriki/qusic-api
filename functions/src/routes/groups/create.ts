@@ -15,6 +15,10 @@ interface Params {
   hostUserId: string;
 }
 
+interface ResponseData {
+  groupId: string;
+}
+
 const router = Router();
 
 const inputValidator = [
@@ -47,7 +51,7 @@ router.post('/', async (req: TypedRequest<Params>, res) => {
       coordinates: new firestore.GeoPoint(latitude, longitude),
     });
 
-    responses.ok(`Created group with id ${group.id}`, res);
+    responses.ok<ResponseData>({ groupId: group.id }, res);
   } catch (err) {
     responses.unexpectedError(err, res);
   }
