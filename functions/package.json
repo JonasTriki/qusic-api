@@ -19,6 +19,7 @@
   },
   "main": "lib/main.js",
   "dependencies": {
+    "argon2": "^0.25.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.3.0",
@@ -56,7 +57,8 @@
     "_responses": "lib/responses",
     "_logger": "lib/logger",
     "_firebase": "lib/firebase",
-    "_models": "lib/models"
+    "_models": "lib/models",
+    "_middlewares": "lib/middlewares"
   },
   "husky": {
     "hooks": {

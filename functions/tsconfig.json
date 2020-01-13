@@ -18,7 +18,8 @@
       "_responses": ["./src/responses"],
       "_logger": ["./src/logger"],
       "_firebase": ["./src/firebase"],
-      "_models": ["./src/models"]
+      "_models": ["./src/models"],
+      "_middlewares": ["./src/middlewares"]
     },
     "skipLibCheck": true
   },
